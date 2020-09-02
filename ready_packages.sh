@@ -1,9 +1,11 @@
 export LFS=/mnt/lfs
+mkdir -v $LFS/sources
+chmod -v a+wt $LFS/sources 
 
-# Create tools directory, and a symlink on the host system
-mkdir -v $LFS/tools
-ln -sv $LFS/tools /
+wget --input-file=wget-list --continue --directory-prefix=$LFS/sources
 
-# Create a dummy user
-
+cp -v md5sums $LFS/sources
+pushd $LFS/sources
+md5sum -c ./md5sums
+popd
 
