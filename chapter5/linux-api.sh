@@ -1,4 +1,3 @@
-export LFS=/mnt/lfs
 pushd $LFS/sources
 
 tar -xf linux-5.8.3.tar.xz

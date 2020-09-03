@@ -13,8 +13,10 @@ sudo ./add_tools_and_user.sh
 The next step is the cross-compilation environment needed for chapter 5.
 ```bash
 cd chapter5 
-sudo -u lfs ./binutils.sh
-sudo -u lfs ./gcc.sh
+sudo -u lfs -i /home/stacy/LFS/chapter5/binutils.sh
+sudo -u lfs -i /home/stacy/LFS/chapter5/gcc.sh
+sudo -u lfs -i /home/stacy/LFS/chapter5/linux-api.sh
+sudo -u lfs -i /home/stacy/LFS/chapter5/glibc.sh
 ```
 
 You can login as the lfs user anytime by running:

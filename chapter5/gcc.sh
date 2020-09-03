@@ -1,4 +1,3 @@
-export LFS=/mnt/lfs
 pushd $LFS/sources
 
 tar -xf gcc-10.2.0.tar.xz

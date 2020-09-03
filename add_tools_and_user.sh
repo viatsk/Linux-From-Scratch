@@ -24,8 +24,11 @@ chown -v lfs $LFS/sources
 
 # set up user's working environment 
 # Create a new bash_profile, which will be the new user's computing environment
+# cat > /home/lfs/.bash_profile << "EOF"
+# exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
+# EOF
 cat > /home/lfs/.bash_profile << "EOF"
-exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
+source ~/.bashrc
 EOF
 
 # Set up a bashrc so shell starts in the same state 

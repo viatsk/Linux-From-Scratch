@@ -1,7 +1,7 @@
-export LFS=/mnt/lfs
 pushd $LFS/sources
 
 tar -xf glibc-2.32.tar.xz
+cd glibc-2.32
 case $(uname -m) in
     i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
     ;;

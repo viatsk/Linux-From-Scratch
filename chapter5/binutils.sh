@@ -1,4 +1,3 @@
-export LFS=/mnt/lfs
 pushd $LFS/sources
 
 tar -xf binutils-2.35.tar.xz
