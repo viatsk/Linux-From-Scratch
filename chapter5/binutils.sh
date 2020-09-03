@@ -1,9 +1,8 @@
 export LFS=/mnt/lfs
 pushd $LFS/sources
 
-mkdir binutils/
-tar -xf binutils-2.35.tar.xz -C binutils/
-cd binutils/binutils-2.35
+tar -xf binutils-2.35.tar.xz
+cd binutils-2.35
 mkdir -v build
 cd build 
 time {
@@ -15,7 +14,8 @@ time {
 	&& make \
 	&& make install
 }
-rm -rf binutils 
+cd ../../
+rm -rf binutils-2.35/ 
 echo Finished Building Binutils v 2.35
 popd
 
