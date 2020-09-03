@@ -1,16 +1,25 @@
 export LFS=/mnt/lfs
 
+# required directory layout  
+mkdir -pv $LFS/{bin,etc,lib,sbin,usr,var}
+case $(uname -m) in
+  x86_64) mkdir -pv $LFS/lib64 ;;
+esac
+
 # Make new tools directory, create a symlink to host system
-mkdir -v $LFS/tools
-ln -sv $LFS/tools /
+mkdir -pv $LFS/tools
+# DO not do this (v9 : ) 'ln -sv $LFS/tools /'
 
 # add an LFS user
 groupadd lfs
 useradd -s /bin/bash -g lfs -m -k /dev/null lfs
 passwd lfs
 
-# give user full access to tools, and sources
-chown -v lfs $LFS/tools
+# give user full access to all the tools, and sources
+chown -v lfs $LFS/{usr,lib,var,etc,bin,sbin,tools}
+case $(uname -m) in
+  x86_64) chown -v lfs $LFS/lib64 ;;
+esac
 chown -v lfs $LFS/sources 
 
 # set up user's working environment 
@@ -26,7 +35,9 @@ umask 022
 LFS=/mnt/lfs
 LC_ALL=POSIX
 LFS_TGT=$(uname -m)-lfs-linux-gnu
-PATH=/tools/bin:/bin:/usr/bin
+PATH=/usr/bin
+if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
+PATH=$LFS/tools/bin:$PATH
 export LFS LC_ALL LFS_TGT PATH
 EOF
 
