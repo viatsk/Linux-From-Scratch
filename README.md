@@ -17,6 +17,7 @@ sudo -u lfs -i /home/stacy/LFS/chapter5/binutils.sh
 sudo -u lfs -i /home/stacy/LFS/chapter5/gcc.sh
 sudo -u lfs -i /home/stacy/LFS/chapter5/linux-api.sh
 sudo -u lfs -i /home/stacy/LFS/chapter5/glibc.sh
+sudo -u lfs -i /home/stacy/LFS/chapter5/libstdcpp.sh
 ```
 
 You can login as the lfs user anytime by running:

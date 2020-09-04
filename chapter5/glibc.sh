@@ -29,7 +29,7 @@ time {
 }
 $LFS/tools/libexec/gcc/$LFS_TGT/10.2.0/install-tools/mkheaders
 cd ../../
-rm glibc-2.32/ 
+rm -rf glibc-2.32/ 
 echo Finished Building glibc v 2.32
 popd
 

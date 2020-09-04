@@ -51,7 +51,6 @@ cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
   `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
 # exit to the sources directory
 cd ..
-rm -rf gcc-10.2.0
 echo Finished Building gcc v 10.2.0
 popd
 
